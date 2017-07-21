@@ -1,0 +1,52 @@
+<svg width="720" height="1300" viewBox="0 0 720 1300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>illustration</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-2102 -1586)">
+<g id="illustration">
+<g id="Rectangle 2">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="matrix(-1 0 0 -1 3402 2886)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="matrix(-1 0 0 -1 3402 2886)" fill="#C6C6C6"/>
+</g>
+</g>
+<g id="Oval">
+<mask id="mask1_outline_ins">
+<use xlink:href="#path2_fill" fill="white" transform="matrix(-1 0 0 -1 3402 2886)"/>
+</mask>
+<g mask="url(#mask1_outline_ins)">
+<use xlink:href="#path3_stroke_2x" transform="matrix(-1 0 0 -1 3402 2886)" fill="#C6C6C6"/>
+</g>
+</g>
+<g id="Oval">
+<mask id="mask2_outline_ins">
+<use xlink:href="#path4_fill" fill="white" transform="matrix(-1 0 0 -1 2752 1856.56)"/>
+</mask>
+<g mask="url(#mask2_outline_ins)">
+<use xlink:href="#path5_stroke_2x" transform="matrix(-1 0 0 -1 2752 1856.56)" fill="#EE0000"/>
+</g>
+</g>
+<g id="Path 2">
+<use xlink:href="#path6_stroke" transform="matrix(-1 0 0 -1 2607 1857)" fill="#C6C6C6"/>
+</g>
+<g id="Path 3">
+<use xlink:href="#path7_stroke" transform="matrix(-1 0 0 -1 2751 2236.34)" fill="#C6C6C6"/>
+</g>
+<g id="Path 4">
+<use xlink:href="#path8_stroke" transform="matrix(-1 0 0 -1 2752.24 1858)" fill="#C6C6C6"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 0L 1300 0L 1300 1300L 0 1300L 0 0Z"/>
+<path id="path1_stroke_2x" d="M 0 0L 0 -1L -1 -1L -1 0L 0 0ZM 1300 0L 1301 0L 1301 -1L 1300 -1L 1300 0ZM 1300 1300L 1300 1301L 1301 1301L 1301 1300L 1300 1300ZM 0 1300L -1 1300L -1 1301L 0 1301L 0 1300ZM 0 1L 1300 1L 1300 -1L 0 -1L 0 1ZM 1299 0L 1299 1300L 1301 1300L 1301 0L 1299 0ZM 1300 1299L 0 1299L 0 1301L 1300 1301L 1300 1299ZM 1 1300L 1 0L -1 0L -1 1300L 1 1300Z"/>
+<path id="path2_fill" fill-rule="evenodd" d="M 1177.82 1029.44C 1254.71 922.665 1300 791.622 1300 650C 1300 291.015 1008.99 0 650 0C 291.015 0 0 291.015 0 650C 0 1008.99 291.015 1300 650 1300"/>
+<path id="path3_stroke_2x" d="M 1178.63 1030.02C 1255.6 923.126 1300.99 791.788 1301 650L 1299 650C 1299.01 791.456 1253.82 922.205 1177.01 1028.85L 1178.63 1030.02ZM 1301 650C 1301 290.463 1009.54 -1 650 -1L 650 1C 1008.43 1 1299 291.567 1299 650L 1301 650ZM 650 -1C 290.463 -1 -1 290.463 -1 650L 1 650C 1 291.567 291.567 1 650 1L 650 -1ZM -1 650C -1 1009.54 290.463 1301 650 1301L 650 1299C 291.567 1299 1 1008.43 1 650L -1 650Z"/>
+<path id="path4_fill" fill-rule="evenodd" d="M 0 270.564C 217.363 270.564 409.807 163.872 527.818 0L 0 270.564Z"/>
+<path id="path5_stroke_2x" d="M 0 271.564C 217.698 271.564 410.438 164.706 528.629 0.584381L 527.007 -0.584381C 409.175 163.038 217.028 269.564 0 269.564L 0 271.564Z"/>
+<path id="path6_stroke" d="M 0 121L -0.150984 120.523L -0.448799 121.22L 0 121ZM 382 0L 382.296 0.403144L 381.849 -0.476659L 382 0ZM 57.4941 238.07L 57.0453 238.291L 57.7899 238.473L 57.4941 238.07ZM 0.150984 121.477L 382.151 0.476659L 381.849 -0.476659L -0.150984 120.523L 0.150984 121.477ZM 381.704 -0.403144L 57.1984 237.667L 57.7899 238.473L 382.296 0.403144L 381.704 -0.403144ZM 57.9429 237.85L 0.448799 120.78L -0.448799 121.22L 57.0453 238.291L 57.9429 237.85Z"/>
+<path id="path7_stroke" d="M 0 0L 0.292126 -0.405786L -0.5 0L 0 0ZM 526.965 379.363L 526.965 379.863L 527.257 378.957L 526.965 379.363ZM 0 379.363L -0.5 379.363L 0 379.863L 0 379.363ZM -0.292126 0.405786L 526.673 379.769L 527.257 378.957L 0.292126 -0.405786L -0.292126 0.405786ZM 526.965 378.863L 0 378.863L 0 379.863L 526.965 379.863L 526.965 378.863ZM 0.5 379.363L 0.5 0L -0.5 0L -0.5 379.363L 0.5 379.363Z"/>
+<path id="path8_stroke" d="M 1.23828 0L 1.56144 -0.381533L 0.738286 -0.00228288L 1.23828 0ZM 145.109 121.859L 145.468 122.208L 145.433 121.478L 145.109 121.859ZM 0 271.207L -0.499995 271.205L 0.358605 271.555L 0 271.207ZM 0.915121 0.381533L 144.786 122.241L 145.433 121.478L 1.56144 -0.381533L 0.915121 0.381533ZM 144.751 121.511L -0.358605 270.859L 0.358605 271.555L 145.468 122.208L 144.751 121.511ZM 0.499995 271.209L 1.73828 0.00228288L 0.738286 -0.00228288L -0.499995 271.205L 0.499995 271.209Z"/>
+</defs>
+</svg>

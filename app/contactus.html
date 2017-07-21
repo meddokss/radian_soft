@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+
+</head>
+
+<body>
+
+<div class="wrapper">
+	<header class="header"><!-- header-->
+	<div class="page">
+		<div class="nav">
+			<div class="logo"><a href="index.html"><img src="./img/logo_top.svg"></a></div>
+			<nav class="main_menu">
+				<ul>
+				<li class="active"><a href="#">About</a></li>
+				<li ><a href="#">Services</a>
+					<ul>
+						<li><a href="proddevelopment.html">Product Development</a></li>
+						<li><a href="#">Startup Services</a></li>
+						<li><a href="#">Software Development</a></li>
+						<li><a href="#">Product and Technical Design</a></li>
+						<li><a href="#">Data Analysis</a></li>
+					</ul>
+				</li>
+				<li><a href="ourtechnology.html">Technology</a></li>
+				<li><a href="ourworks.html">Portfolio</a></li>
+				<li><a href="contactus.html">Contact</a></li>
+				</ul>
+			</nav>
+			<nav id="menu-mobile">
+				<ul>
+					<li><a href="#">About</a></li>
+					<li id="second_menu"><a href="#">Services</a></li>
+					<li><a href="ourtechnology.html">Technology</a></li>
+					<li><a href="ourworks.html">Portfolio</a></li>
+					<li><a href="contactus.html">Contact</a></li>
+				</ul>
+			</nav>
+			<nav id="menu-mobile-second">
+				<a class="back" href="#">Back</a>
+				<ul>
+					<li><a href="proddevelopment.html">Product Development</a></li>
+					<li><a href="#">Startup Services</a></li>
+					<li><a href="#">Software Development</a></li>
+					<li><a href="#">Product and Technical Design</a></li>
+					<li><a href="#">Data Analysis</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div  class="button fade_in"><a id="open">Hire Us!</a></div>
+		<button id="hamburger" class="hamburger hamburger--emphatic" type="button">
+			  <span class="hamburger-box">
+			    <span class="hamburger-inner"></span>
+			  </span>
+		</button>
+	</div>
+</header><!-- .header-->
+
+<div id="openModal" class="modalDialog">
+	<div class="wrapper">
+		<header class="header hire_us">
+			<div class="logo"><a href="index.html"><img src="./img/logo_top.svg"></a></div>
+			<a id="close" title="Закрыть" class="close"></a>
+		</header><!-- .header-->
+		<main class="content">
+			<section class="contacts hire_us_form">
+				<div class="wrap">
+					<div class="contact_us">
+						<div class="form_wrapper">
+							<h3>Work with us</h3>
+							<div class="contact_us_text">Our clients get the best results when they have our team dedicated to&nbsp;their
+								business for extended
+								periods
+								of&nbsp;time.
+							</div>
+							<form class="form" action="">
+								<div class="fields">
+									<input type="text" class="txt" name="name" tabindex="1" placeholder="Your Name"
+										title="Your Name" required="">
+								</div>
+								<div class="fields">
+									<input type="email" class="txt" title="Your Email" name="email"
+										pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+										placeholder="Your Email"
+										required="">
+								</div>
+								<textarea class="txt" title="Message" rows="3" cols="100" placeholder="Message"></textarea>
+								<div class="send">
+									<input class="button" type="submit" id="sand" value="Send Request">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main><!-- .content -->
+	</div>
+</div>
+
+	<main class="content">
+		<section class="contacts reverse">
+			<div class="page">
+				<h1>Contact us</h1>
+				<h3 class="marked">The market is&nbsp;not standing still.<br>
+					And neither are&nbsp;we. </h3>
+				<div class="wrap">
+	<div class="contact_us">
+		<h3>Contact Us</h3>
+		<div class="form_wrapper">
+			<h4 class="form_h4">Work with us</h4>
+			<div class="contact_us_text">Our clients get the best results when they have our team dedicated to&nbsp;their
+				business for extended
+				periods
+				of&nbsp;time.
+			</div>
+			<form class="form" action="">
+				<div class="fields">
+					<input type="text" class="txt" name="name" tabindex="1" placeholder="Your Name"
+						title="Your Name" required="">
+				</div>
+				<div class="fields">
+					<input type="email" class="txt" title="Your Email" name="email"
+						pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+						placeholder="Your Email"
+						required="">
+				</div>
+				<div class="fields">
+					<textarea class="txt" title="Message" rows="3" cols="5" placeholder="Message"></textarea>
+				</div>
+				<div class="send">
+					<input class="button" type="submit" id="sand" value="Send Request">
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="location">
+		<h3>Office Location</h3>
+		<div class="address contact_map_adr odessa"><a>The Pentagon<br>
+			Washington, DC 20301</a>
+		</div>
+		<div class="phone"><a href="tel: 492-374-3714">Phone: 492-374-3714</a></div>
+		<div class="phone"><a href="tel: 347-331-2566">Fax: 347-331-2566</a></div>
+		<div class="map" id="map"></div>
+	</div>
+</div>
+
+
+
+
+			</div>
+		</section>
+	</main><!-- .content -->
+</div>
+
+<footer class="footer"><!-- footer -->
+	<div class="page">
+		<div class="logo_footer">
+			<a href="#"><img src="./img/logo_top.svg"></a>
+			<nav>
+				<ul>
+					<li class="active"><a href="#">Privacy</a></li>
+					<li><a href="ourterms.html">Terms</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="back_top">
+			<a>Back to Top</a>
+		</div>
+	</div>
+</footer><!-- .footer -->
+
+
+<link rel="stylesheet" href="css/main.min.css">
+<script src="js/scripts.min.js"></script>
+<script defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBDhC3miMFlNh5QNFlHYwxRCOzpeht5oY"></script>
+</body>
+</html>

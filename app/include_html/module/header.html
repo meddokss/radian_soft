@@ -1,0 +1,90 @@
+<header class="header"><!-- header-->
+	<div class="page">
+		<div class="nav">
+			<div class="logo"><a href="index.html"><img src="./img/logo_top.svg"></a></div>
+			<nav class="main_menu">
+				<ul>
+				<li class="active"><a href="#">About</a></li>
+				<li ><a href="#">Services</a>
+					<ul>
+						<li><a href="proddevelopment.html">Product Development</a></li>
+						<li><a href="#">Startup Services</a></li>
+						<li><a href="#">Software Development</a></li>
+						<li><a href="#">Product and Technical Design</a></li>
+						<li><a href="#">Data Analysis</a></li>
+					</ul>
+				</li>
+				<li><a href="ourtechnology.html">Technology</a></li>
+				<li><a href="ourworks.html">Portfolio</a></li>
+				<li><a href="contactus.html">Contact</a></li>
+				</ul>
+			</nav>
+			<nav id="menu-mobile">
+				<ul>
+					<li><a href="#">About</a></li>
+					<li id="second_menu"><a href="#">Services</a></li>
+					<li><a href="ourtechnology.html">Technology</a></li>
+					<li><a href="ourworks.html">Portfolio</a></li>
+					<li><a href="contactus.html">Contact</a></li>
+				</ul>
+			</nav>
+			<nav id="menu-mobile-second">
+				<a class="back" href="#">Back</a>
+				<ul>
+					<li><a href="proddevelopment.html">Product Development</a></li>
+					<li><a href="#">Startup Services</a></li>
+					<li><a href="#">Software Development</a></li>
+					<li><a href="#">Product and Technical Design</a></li>
+					<li><a href="#">Data Analysis</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div  class="button fade_in"><a id="open">Hire Us!</a></div>
+		<button id="hamburger" class="hamburger hamburger--emphatic" type="button">
+			  <span class="hamburger-box">
+			    <span class="hamburger-inner"></span>
+			  </span>
+		</button>
+	</div>
+</header><!-- .header-->
+
+<div id="openModal" class="modalDialog">
+	<div class="wrapper">
+		<header class="header hire_us">
+			<div class="logo"><a href="index.html"><img src="./img/logo_top.svg"></a></div>
+			<a id="close" title="Закрыть" class="close"></a>
+		</header><!-- .header-->
+		<main class="content">
+			<section class="contacts hire_us_form">
+				<div class="wrap">
+					<div class="contact_us">
+						<div class="form_wrapper">
+							<h3>Work with us</h3>
+							<div class="contact_us_text">Our clients get the best results when they have our team dedicated to&nbsp;their
+								business for extended
+								periods
+								of&nbsp;time.
+							</div>
+							<form class="form" action="">
+								<div class="fields">
+									<input type="text" class="txt" name="name" tabindex="1" placeholder="Your Name"
+										title="Your Name" required="">
+								</div>
+								<div class="fields">
+									<input type="email" class="txt" title="Your Email" name="email"
+										pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+										placeholder="Your Email"
+										required="">
+								</div>
+								<textarea class="txt" title="Message" rows="3" cols="100" placeholder="Message"></textarea>
+								<div class="send">
+									<input class="button" type="submit" id="sand" value="Send Request">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main><!-- .content -->
+	</div>
+</div>

@@ -1,0 +1,69 @@
+<svg width="437" height="112" viewBox="0 0 437 112" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Our_misson_illustration</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-2121 -1021)">
+<g id="Our_misson_illustration">
+<g id="Oval 3">
+<use xlink:href="#path1_stroke" transform="translate(2122 1022)" fill="#C6C6C6"/>
+</g>
+<g id="Oval 3 Copy">
+<use xlink:href="#path1_stroke" transform="translate(2204 1022)" fill="#C6C6C6"/>
+</g>
+<g id="Oval 3 Copy 2">
+<use xlink:href="#path1_stroke" transform="translate(2282 1022)" fill="#C6C6C6"/>
+</g>
+<g id="Oval 3 Copy 3">
+<use xlink:href="#path1_stroke" transform="translate(2362 1022)" fill="#C6C6C6"/>
+</g>
+<g id="Group">
+<g id="Oval 3 Copy 5">
+<use xlink:href="#path1_stroke" transform="translate(2447 1022)" fill="#EE0000"/>
+</g>
+<g id="Path 6">
+<use xlink:href="#path2_stroke" transform="translate(2460 1104)" fill="#EE0000"/>
+</g>
+<g id="Path 6 Copy">
+<use xlink:href="#path3_stroke" transform="translate(2465 1101)" fill="#EE0000"/>
+</g>
+<g id="Path 6 Copy 2">
+<use xlink:href="#path4_stroke" transform="translate(2469 1098)" fill="#EE0000"/>
+</g>
+<g id="Path 6 Copy 3">
+<use xlink:href="#path5_stroke" transform="translate(2473.63 1095.27)" fill="#EE0000"/>
+</g>
+<g id="Path 6 Copy 3">
+<use xlink:href="#path6_stroke" transform="translate(2478.29 1092.15)" fill="#EE0000"/>
+</g>
+<g id="Path 6 Copy 3">
+<use xlink:href="#path7_stroke" transform="translate(2482.92 1089.48)" fill="#EE0000"/>
+</g>
+<g id="Path 6 Copy 3">
+<use xlink:href="#path8_stroke" transform="translate(2487.55 1086.52)" fill="#EE0000"/>
+</g>
+<g id="Path 6 Copy 3">
+<use xlink:href="#path9_stroke" transform="translate(2492.11 1083.73)" fill="#EE0000"/>
+</g>
+<g id="Path 6 Copy 3">
+<use xlink:href="#path10_stroke" transform="translate(2496.93 1080.51)" fill="#EE0000"/>
+</g>
+<g id="Path 6 Copy 3">
+<use xlink:href="#path11_stroke" transform="translate(2499.82 1077.44)" fill="#EE0000"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 55 110C 85.3757 110 110 85.3757 110 55C 110 24.6243 85.3757 0 55 0C 24.6243 0 0 24.6243 0 55C 0 85.3757 24.6243 110 55 110Z"/>
+<path id="path1_stroke" d="M 55 110.5C 85.6518 110.5 110.5 85.6518 110.5 55L 109.5 55C 109.5 85.0995 85.0995 109.5 55 109.5L 55 110.5ZM 110.5 55C 110.5 24.3482 85.6518 -0.5 55 -0.5L 55 0.5C 85.0995 0.5 109.5 24.9005 109.5 55L 110.5 55ZM 55 -0.5C 24.3482 -0.5 -0.5 24.3482 -0.5 55L 0.5 55C 0.5 24.9005 24.9005 0.5 55 0.5L 55 -0.5ZM -0.5 55C -0.5 85.6518 24.3482 110.5 55 110.5L 55 109.5C 24.9005 109.5 0.5 85.0995 0.5 55L -0.5 55Z"/>
+<path id="path2_stroke" d="M -0.350196 0.356879L 25.4608 25.6845L 26.1612 24.9708L 0.350196 -0.356879L -0.350196 0.356879Z"/>
+<path id="path3_stroke" d="M -0.35394 0.353166L 30.1729 30.9469L 30.8808 30.2406L 0.35394 -0.353166L -0.35394 0.353166Z"/>
+<path id="path4_stroke" d="M -0.354088 0.353017L 32.3168 33.123L 33.025 32.417L 0.354088 -0.353017L -0.354088 0.353017Z"/>
+<path id="path5_stroke" d="M -0.352925 0.35418L 27.7628 28.3703L 28.4686 27.6619L 0.352925 -0.35418L -0.352925 0.35418Z"/>
+<path id="path6_stroke" d="M -0.351096 0.355994L 23.1084 23.4927L 23.8106 22.7807L 0.351096 -0.355994L -0.351096 0.355994Z"/>
+<path id="path7_stroke" d="M -0.353365 0.353741L 18.4718 19.1589L 19.1786 18.4514L 0.353365 -0.353741L -0.353365 0.353741Z"/>
+<path id="path8_stroke" d="M -0.348075 0.358948L 13.8526 14.1295L 14.5488 13.4116L 0.348075 -0.358948L -0.348075 0.358948Z"/>
+<path id="path9_stroke" d="M -0.352067 0.355033L 9.29051 9.91705L 9.99465 9.20698L 0.352067 -0.355033L -0.352067 0.355033Z"/>
+<path id="path10_stroke" d="M -0.352067 0.355033L 4.46922 5.13604L 5.17336 4.42597L 0.352067 -0.355033L -0.352067 0.355033Z"/>
+<path id="path11_stroke" d="M 0.662682 1.36908L 1.59335 2.21966L 2.26798 1.48151L 1.33732 0.630925L 0.662682 1.36908Z"/>
+</defs>
+</svg>

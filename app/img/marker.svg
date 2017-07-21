@@ -1,0 +1,14 @@
+<svg width="26" height="26" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Oval 2</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-1617 126)">
+<g id="Oval 2">
+<g id="Oval 2">
+<use xlink:href="#path0_fill" transform="matrix(-6.12323e-17 1 1 6.12323e-17 1617 -126)" fill="#EE0000"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 13 26C 20.1797 26 26 20.1797 26 13C 22.3161 13 13 13 13 13C 13 13 13 13 19.9306 1.99952C 17.9245 0.732957 15.5478 0 13 0C 5.8203 0 0 5.8203 0 13C 0 20.1797 5.8203 26 13 26Z"/>
+</defs>
+</svg>
