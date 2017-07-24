@@ -1,12 +1,1 @@
-<svg width="384" height="204" viewBox="0 0 384 204" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<title>Path 2</title>
-<desc>Created using Figma</desc>
-<g id="Canvas" transform="translate(-5398 138)">
-<g id="Path 2">
-<use xlink:href="#path0_stroke" transform="translate(5399 -173)" fill="#C6C6C6"/>
-</g>
-</g>
-<defs>
-<path id="path0_stroke" d="M 0 121L -0.150984 120.523L -0.448799 121.22L 0 121ZM 382 0L 382.296 0.403144L 381.849 -0.476659L 382 0ZM 57.4941 238.07L 57.0453 238.291L 57.7899 238.473L 57.4941 238.07ZM 0.150984 121.477L 382.151 0.476659L 381.849 -0.476659L -0.150984 120.523L 0.150984 121.477ZM 381.704 -0.403144L 57.1984 237.667L 57.7899 238.473L 382.296 0.403144L 381.704 -0.403144ZM 57.9429 237.85L 0.448799 120.78L -0.448799 121.22L 57.0453 238.291L 57.9429 237.85Z"/>
-</defs>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="382.74" height="239.88" viewBox="0 0 382.74 239.88"><path fill="none" stroke="#c6c6c6" stroke-linejoin="bevel" stroke-miterlimit="50" d="M.37 121.44l382-121-324.5 238.07z"/></svg>

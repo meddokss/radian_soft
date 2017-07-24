@@ -848,7 +848,7 @@ select {
   .button:focus, .button:hover {
     text-decoration: none;
     border: 2px solid red;
-    background-color: #fff;
+    background-color: #FFF;
     padding: 5px 0; }
     .button:focus a, .button:hover a {
       color: red; }
@@ -933,7 +933,9 @@ select {
 .open {
   pointer-events: auto;
   opacity: 1;
-  z-index: 99999; }
+  z-index: 99999;
+  -webkit-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in; }
 
 .modalDialog > div {
   position: relative; }
@@ -1224,7 +1226,7 @@ section {
         padding: 4px 20px;
         text-decoration: none;
         border: 2px solid red;
-        background-color: #fff;
+        background-color: #FFF;
         color: red; }
   .head_title .svg_2 {
     position: absolute;
@@ -1287,8 +1289,10 @@ section {
       padding: 30px 64px 0 0; }
 
 .about_us {
+  padding-top: 0;
   background-color: #FAFAFA;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .about_us .svg {
     position: absolute;
     top: -webkit-calc(50% - 650px);
@@ -1367,23 +1371,55 @@ section {
         opacity: 0.7;
         position: absolute;
         background-color: #D8D8D8; }
-  .about_us .svg_1 {
+  .about_us .svg {
     position: absolute;
     top: -webkit-calc(50% - 650px);
     top: calc(50% - 650px);
     z-index: 1;
+    height: 80%;
     right: 0; }
 
+.grey {
+  background-color: #F5F5F5; }
+
 .wedo {
+  padding: 0;
   position: relative; }
   .wedo h3 {
     color: #282828;
     font-weight: 900;
-    margin-top: -40px; }
+    z-index: 100; }
   .wedo .wrap {
     position: relative;
     height: 100vh;
-    padding: 90px 0 135px; }
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .wedo .wrap:before {
+      content: "";
+      background-image: url(../img/works/triangle_2.svg);
+      background-repeat: no-repeat;
+      width: 384px;
+      height: 204px;
+      min-width: 384px;
+      min-height: 240px;
+      bottom: 5%;
+      right: 10%;
+      position: absolute;
+      z-index: 50;
+      -webkit-transform: rotate(40deg);
+          -ms-transform: rotate(40deg);
+              transform: rotate(40deg); }
   .wedo .left_menu {
     position: absolute;
     width: 235px;
@@ -1391,7 +1427,10 @@ section {
     font-family: "Avenir Next";
     font-size: 14px;
     font-weight: 700;
-    z-index: 10; }
+    z-index: 10;
+    top: -webkit-calc(50% - 130px);
+    top: calc(50% - 130px);
+    padding-left: 30px; }
     .wedo .left_menu ol {
       list-style-type: none;
       counter-reset: item; }
@@ -1446,16 +1485,25 @@ section {
         background-color: #E00;
         -webkit-border-radius: 50%;
                 border-radius: 50%; }
+    .wedo .left_menu:before {
+      content: "";
+      background-image: url(../img/works/triangle_1.svg);
+      background-repeat: no-repeat;
+      width: 146px;
+      height: 146px;
+      top: -50%;
+      left: 45px;
+      position: absolute; }
   .wedo .description {
     opacity: 0;
     pointer-events: none;
     position: absolute;
-    top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     padding-left: 235px;
     padding-top: 105px;
+    padding-right: 30px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1469,19 +1517,23 @@ section {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column; }
-    .wedo .description:before {
-      content: "";
-      background-image: url(../img/bolcks.svg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
+    .wedo .description .shest {
       max-width: 277px;
       max-height: 256px;
       width: 100%;
       height: 100%;
-      right: 0;
-      top: 9px;
-      position: absolute; }
+      right: 30px;
+      top: 50px;
+      position: absolute;
+      background: url(../img/bolcks.svg) no-repeat; }
+      .wedo .description .shest.move_down {
+        animation-name: move_down;
+        -webkit-animation-name: move_down;
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        animation-timing-function: ease;
+        -webkit-animation-timing-function: ease;
+        visibility: visible !important; }
     .wedo .description .title {
       color: #E00;
       font-family: "Avenir Next";
@@ -1489,8 +1541,19 @@ section {
       font-weight: 700;
       line-height: 80px;
       width: 100%;
-      padding: 0 118px 40px 0; }
+      padding: 0 200px 0 0;
+      top: 0;
+      z-index: 10; }
+      .wedo .description .title.move_up {
+        animation-name: move_up;
+        -webkit-animation-name: move_up;
+        animation-duration: .5s;
+        -webkit-animation-duration: .5s;
+        animation-timing-function: ease;
+        -webkit-animation-timing-function: ease;
+        visibility: visible !important; }
     .wedo .description .text {
+      position: relative;
       color: #282828;
       font-family: "Avenir Next";
       font-size: 30px;
@@ -1498,36 +1561,124 @@ section {
       font-weight: 500;
       width: 100%;
       padding: 0 118px 0 0; }
+      .wedo .description .text.move_text {
+        animation-name: move_text;
+        -webkit-animation-name: move_text;
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        animation-timing-function: ease;
+        -webkit-animation-timing-function: ease;
+        visibility: visible !important; }
       .wedo .description .text span {
         font-weight: 900; }
     .wedo .description .link {
       display: none; }
     .wedo .description.change_to_left {
       text-align: right;
-      padding-top: 200px; }
+      padding-top: 105px; }
       .wedo .description.change_to_left .title {
-        padding: 0 0 50px 0px; }
+        padding: 0 0 50px 230px; }
       .wedo .description.change_to_left .text {
         padding: 0 0 0 118px; }
-      .wedo .description.change_to_left:before {
-        left: 250px; }
+      .wedo .description.change_to_left .shest {
+        left: 200px; }
     .wedo .description.bg_grey {
       background-color: #F5F5F5; }
-      .wedo .description.bg_grey:before {
-        background-image: url(../img/bolcks_white.svg); }
+      .wedo .description.bg_grey .shest {
+        background: url(../img/bolcks_white.svg) no-repeat; }
   .wedo .active_desc {
     opacity: 1;
     pointer-events: auto; }
-  .wedo.bg_grey {
-    background-color: #F5F5F5; }
-    .wedo.bg_grey .description:before {
-      background-image: url(../img/bolcks_white.svg); }
+
+@-webkit-keyframes move_up {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0; }
+  50% {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1; } }
+
+@keyframes move_up {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0; }
+  50% {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1; } }
+
+@-webkit-keyframes move_text {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0; }
+  50% {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1; } }
+
+@keyframes move_text {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0; }
+  50% {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1; } }
+
+@-webkit-keyframes move_down {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0; }
+  50% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1; } }
+
+@keyframes move_down {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0; }
+  50% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1; } }
 
 .contacts {
   background-color: #F4F4F4;
   padding-bottom: 60px;
   padding-top: 60px; }
-  .contacts .wrap {
+  .contacts .wrap_contacts {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1554,7 +1705,7 @@ section {
       padding: 4px 20px;
       text-decoration: none;
       border: 2px solid red;
-      background-color: #fff;
+      background-color: #FFF;
       color: red; }
   .contacts .location {
     width: 50%;
@@ -1589,7 +1740,7 @@ section {
     background-color: #FFF; }
     .contacts.reverse h1 {
       padding-top: 70px; }
-    .contacts.reverse .wrap {
+    .contacts.reverse .wrap_contacts {
       margin-bottom: 37px; }
     .contacts.reverse h3 {
       color: #9f9f9f;
@@ -1628,17 +1779,10 @@ section {
     .contacts.hire_us_form h3 {
       color: #ee0000;
       padding-bottom: 20px; }
-    .contacts.hire_us_form .wrap {
+    .contacts.hire_us_form .contact_us {
       width: 100%;
-      max-width: 520px;
-      margin: 0 auto;
-      border-bottom: none;
-      padding: 0 20px;
+      margin-right: 0;
       background: none; }
-      .contacts.hire_us_form .wrap .contact_us {
-        width: 100%;
-        margin-right: 0;
-        background: none; }
     .contacts.hire_us_form .form_wrapper {
       width: 100%;
       max-width: 480px;
@@ -1672,7 +1816,7 @@ section {
           padding: 4px 20px;
           text-decoration: none;
           border: 2px solid red;
-          background-color: #fff;
+          background-color: #FFF;
           color: red; }
 
 .terms article {
@@ -1810,7 +1954,7 @@ section {
       background-repeat: no-repeat;
       background-position: right;
       width: 100%;
-      height: 100%;
+      height: 102%;
       right: -115px;
       top: -65px;
       position: absolute; }
@@ -2107,13 +2251,18 @@ path {
   -webkit-animation: dash 3s linear alternate;
           animation: dash 3s linear alternate; }
 
-.move #Path-3, .move #Path-2, .move #Path-4, .move #Oval, .move #Path-5 {
+.svg_2 #Oval {
+  stroke-dasharray: 3500;
+  -webkit-animation: dash 3s linear alternate;
+          animation: dash 3s linear alternate; }
+
+.move #Path-3, .move #Path-2, .move #Path-4, .move #Path-5 {
   stroke-dasharray: 1600;
   -webkit-animation: dash 3s linear alternate;
           animation: dash 3s linear alternate; }
 
-#Oval {
-  stroke-dasharray: 2600;
+.move #Oval {
+  stroke-dasharray: 3500;
   -webkit-animation: dash 3s linear alternate;
           animation: dash 3s linear alternate; }
 
@@ -2135,9 +2284,10 @@ path {
   .responsive h3 {
     padding-top: 40px;
     text-decoration: underline;
-    margin-left: -20px; }
+    margin-left: -20px;
+    font-weight: 900; }
   .responsive p {
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 0;
     margin-left: -20px; }
 
@@ -2163,7 +2313,10 @@ path {
 /*====================== VARS =============================================================*/
 @media only screen and (max-width: 1120px) {
   .works .block_wrap .block .descr {
-    padding: 40px 40px 40px 30px; } }
+    padding: 40px 40px 40px 30px; }
+  .about_us .svg {
+    top: -webkit-calc(60% - 650px);
+    top: calc(60% - 650px); } }
 
 @media only screen and (max-width: 1024px) {
   .about_us .review .post {
@@ -2241,7 +2394,46 @@ path {
     padding-right: 0;
     margin-left: 88px;
     font-size: 20px;
-    line-height: 30px; } }
+    line-height: 30px; }
+  .wedo {
+    padding-top: 0px; }
+    .wedo h3 {
+      padding: 0 30px 0; }
+    .wedo .wrap {
+      margin-top: 0;
+      padding: 0; }
+    .wedo .left_menu {
+      padding-left: 30px;
+      width: 140px; }
+      .wedo .left_menu li {
+        padding: 26px 0; }
+      .wedo .left_menu a {
+        display: none; }
+      .wedo .left_menu .active {
+        padding: 26px 0; }
+    .wedo .description {
+      height: auto;
+      padding-top: 280px;
+      padding-bottom: 200px;
+      padding-left: 140px; }
+      .wedo .description .title {
+        padding: 50px 200px 50px 0; }
+      .wedo .description .shest {
+        top: 50px; }
+      .wedo .description .text {
+        padding: 0; }
+      .wedo .description.change_to_left {
+        padding-top: 280px;
+        text-align: right;
+        padding-right: 20px;
+        padding-left: 110px; }
+        .wedo .description.change_to_left .title {
+          padding: 50px 0 50px 0; }
+        .wedo .description.change_to_left .text {
+          padding: 0; }
+        .wedo .description.change_to_left .shest {
+          left: 200px;
+          top: 50px; } }
 
 @media only screen and (max-width: 992px) {
   .contacts .contact_us {
@@ -2308,12 +2500,14 @@ path {
     line-height: 45px;
     font-weight: 500; }
   .wedo {
-    padding-top: 60px; }
+    padding-top: 0px; }
+    .wedo h3 {
+      padding: 0 30px 0; }
     .wedo .wrap {
-      padding-top: 0;
-      margin-top: 278px;
-      padding: 0 0 200px; }
+      margin-top: 0;
+      padding: 0; }
     .wedo .left_menu {
+      padding-left: 30px;
       width: 140px; }
       .wedo .left_menu li {
         padding: 26px 0; }
@@ -2322,16 +2516,15 @@ path {
       .wedo .left_menu .active {
         padding: 26px 0; }
     .wedo .description {
-      padding-top: 5px;
+      padding-top: 280px;
+      padding-bottom: 200px;
       padding-left: 140px; }
       .wedo .description .title {
-        padding: 50px 118px 50px 0; }
-      .wedo .description:before {
-        top: -254px; }
+        padding: 50px 110px 50px 0; }
       .wedo .description .text {
         padding: 0; }
       .wedo .description.change_to_left {
-        padding-top: 0;
+        padding-top: 280px;
         text-align: right;
         padding-right: 20px;
         padding-left: 110px; }
@@ -2339,9 +2532,6 @@ path {
           padding: 50px 0 50px 0; }
         .wedo .description.change_to_left .text {
           padding: 0; }
-        .wedo .description.change_to_left:before {
-          left: 0;
-          top: -230px; }
   .works .bg_img h1 {
     font-size: 48px;
     padding-top: 144px;
@@ -2376,8 +2566,9 @@ path {
         margin-left: 0; }
   .form_wrapper {
     padding: 26px 25px 29px 25px; }
-  .about_us {
-    margin-top: 98px; } }
+  .about_us .svg {
+    top: -webkit-calc(60% - 650px);
+    top: calc(60% - 650px); } }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
@@ -2530,8 +2721,7 @@ path {
   .header .main_menu {
     display: none; }
   .about_us {
-    padding-top: 0;
-    margin-top: 110px; }
+    padding-top: 0; }
     .about_us h3 {
       padding-top: 63px; }
     .about_us .review .massage {
@@ -2547,8 +2737,9 @@ path {
       .about_us .review .post:first-child {
         margin-top: 0; }
     .about_us .svg {
-      position: absolute;
-      left: 50%; }
+      top: -webkit-calc(50% - 650px);
+      top: calc(50% - 650px);
+      left: 20%; }
   .contacts {
     padding-bottom: 70px; }
     .contacts .contact_us {
@@ -2562,7 +2753,7 @@ path {
       padding-bottom: 52px; }
       .contacts.reverse h1 {
         padding-top: 40px; }
-      .contacts.reverse .wrap {
+      .contacts.reverse .wrap_contacts {
         margin-bottom: 37px; }
       .contacts.reverse h3 {
         padding-top: 7px; }
@@ -2675,6 +2866,9 @@ path {
       font-size: 48px;
       padding-top: 144px;
       padding-bottom: 0; }
+      .prod_dev .bg_img h1:after {
+        right: -215px;
+        height: 250px; }
   .prod_dev article {
     position: relative; }
     .prod_dev article:first-child:before {
@@ -2682,6 +2876,8 @@ path {
   .prod_dev h1 {
     padding-top: 28px;
     padding-bottom: 100px; }
+    .prod_dev h1:before {
+      display: none; }
   .prod_dev .steps {
     padding-top: 52px;
     padding-bottom: 30px;
@@ -2806,7 +3002,7 @@ path {
     padding-bottom: 30px; } }
 
 @media only screen and (max-width: 700px) {
-  .contacts .wrap {
+  .contacts .wrap_contacts {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -2828,7 +3024,7 @@ path {
     padding-bottom: 42px; }
     .contacts.reverse h1 {
       padding-top: 40px; }
-    .contacts.reverse .wrap {
+    .contacts.reverse .wrap_contacts {
       margin-bottom: 0; }
     .contacts.reverse h3 {
       padding-top: 0; }
@@ -2860,7 +3056,7 @@ path {
     .contacts.hire_us_form h3 {
       color: #ee0000;
       padding-bottom: 20px; }
-    .contacts.hire_us_form .wrap {
+    .contacts.hire_us_form .contact_us {
       padding: 0 25px; }
     .contacts.hire_us_form .form_wrapper {
       margin: 0 auto; }
@@ -2879,28 +3075,34 @@ path {
     padding-top: 60px;
     padding-bottom: 0; }
     .wedo h3 {
-      display: none; }
+      display: none;
+      padding: 0 30px 0; }
     .wedo .mobile {
       display: block; }
     .wedo .wrap {
-      height: auto; }
+      margin-top: 0;
+      height: auto;
+      padding: 20px 0 60px 0; }
+      .wedo .wrap:before {
+        display: none; }
     .wedo .left_menu {
       display: none; }
     .wedo .description {
-      margin-top: 278px;
       display: block !important;
       position: relative;
       text-align: center;
+      opacity: 1;
       height: auto;
-      padding: 0 30px 0 110px; }
+      padding: 280px 30px 20px 30px; }
       .wedo .description .title {
         padding: 0;
         padding-top: 40px;
         font-size: 36px;
         line-height: 50px; }
-      .wedo .description:before {
+      .wedo .description .shest {
         left: 50%;
-        margin-left: -140px; }
+        margin-left: -140px;
+        top: 20px; }
       .wedo .description .text {
         font-size: 24px;
         line-height: 38px;
@@ -2910,10 +3112,7 @@ path {
         padding-top: 20px; }
       .wedo .description.change_to_left {
         text-align: center;
-        padding-top: 0;
-        padding-right: 0;
-        padding: 0 30px;
-        padding-bottom: 60px; }
+        padding: 280px 30px 20px 30px; }
         .wedo .description.change_to_left .title {
           padding: 0;
           line-height: 40px;
@@ -2921,11 +3120,23 @@ path {
         .wedo .description.change_to_left .text {
           padding: 0;
           padding-top: 20px; }
-        .wedo .description.change_to_left:before {
+        .wedo .description.change_to_left .shest {
           left: 50%;
-          top: -290px; }
+          top: 20px; }
       .wedo .description.bg_grey {
-        padding: 30px 0; } }
+        padding: 280px 30px 20px 30px;
+        background: white; }
+        .wedo .description.bg_grey .shest {
+          top: 20px;
+          background: url(../img/bolcks.svg) no-repeat; }
+  .prod_dev .bg_img {
+    margin-top: 50px; }
+    .prod_dev .bg_img h1 {
+      font-size: 48px;
+      padding-top: 144px;
+      padding-bottom: 0; }
+      .prod_dev .bg_img h1:after {
+        display: none; } }
 
 @media only screen and (max-width: 620px) {
   .technology .articles .item {
@@ -3070,8 +3281,7 @@ path {
       font-size: 18px;
       line-height: 24px; }
   .about_us {
-    padding-top: 0;
-    margin-top: 60px; }
+    padding-top: 0; }
     .about_us h3 {
       padding-top: 30px; }
     .about_us .review {
@@ -3109,74 +3319,65 @@ path {
     .wedo .mobile {
       display: block; }
     .wedo .wrap {
-      margin-top: 150px;
-      padding: 0; }
+      padding: 20px 0 0 0;
+      margin-top: 0px; }
     .wedo .left_menu {
       display: none; }
     .wedo .description {
+      margin-top: 130px;
       padding: 5px 10px 0;
       text-align: center; }
       .wedo .description .title {
         padding: 0;
         font-size: 28px;
         line-height: 40px; }
-      .wedo .description:before {
+      .wedo .description .shest {
         background-size: 100%;
         left: 50%;
         margin-left: -64px;
         width: 128px;
         height: 128px;
-        top: -130px; }
+        top: -120px; }
       .wedo .description .text {
         font-size: 20px;
         line-height: 30px; }
       .wedo .description .link {
         display: block;
         padding-top: 24px; }
-    .wedo.change_to_left {
-      padding-top: 0; }
-      .wedo.change_to_left .wrap {
+      .wedo .description.change_to_left {
         margin-top: 130px;
-        padding: 0; }
-      .wedo.change_to_left .left_menu {
-        display: none; }
-      .wedo.change_to_left .description {
         padding: 5px 10px 0;
-        text-align: center; }
-        .wedo.change_to_left .description .title {
+        padding-bottom: 0;
+        text-align: center;
+        min-height: auto; }
+        .wedo .description.change_to_left .title {
           padding: 0;
           font-size: 28px;
           line-height: 40px; }
-        .wedo.change_to_left .description:before {
+        .wedo .description.change_to_left .shest {
           background-size: 100%;
           left: 50%;
           margin-left: -64px;
-          top: -130px; }
-        .wedo.change_to_left .description .text {
+          top: -120px; }
+        .wedo .description.change_to_left .text {
           font-size: 20px;
           line-height: 30px; }
-        .wedo.change_to_left .description .link {
+        .wedo .description.change_to_left .link {
           display: block;
           padding-top: 24px; }
-    .wedo.bg_grey {
-      background-color: #FFF;
-      padding-top: 0; }
-      .wedo.bg_grey .wrap {
-        margin-top: 130px;
-        padding: 0; }
-      .wedo.bg_grey .description {
+      .wedo .description.bg_grey {
+        background-color: #FFF;
         padding: 5px 10px 0;
         text-align: center; }
-        .wedo.bg_grey .description:before {
+        .wedo .description.bg_grey .shest {
           background-size: 100%;
           left: 50%;
           margin-left: -64px;
-          background-image: url(../img/bolcks.svg);
           top: -130px; }
   .contacts {
     padding-top: 30px;
     padding-bottom: 60px; }
-    .contacts .wrap {
+    .contacts .wrap_contacts {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -webkit-flex-direction: column;
@@ -3200,7 +3401,7 @@ path {
       padding-bottom: 42px; }
       .contacts.reverse h1 {
         padding-top: 40px; }
-      .contacts.reverse .wrap {
+      .contacts.reverse .wrap_contacts {
         margin-bottom: 0; }
       .contacts.reverse h3 {
         padding-top: 0; }
@@ -3232,7 +3433,7 @@ path {
       .contacts.hire_us_form h3 {
         color: #ee0000;
         padding-bottom: 20px; }
-      .contacts.hire_us_form .wrap {
+      .contacts.hire_us_form .contact_us {
         padding: 0 25px; }
       .contacts.hire_us_form .form_wrapper {
         margin: 0 auto; }
@@ -3586,8 +3787,7 @@ path {
       font-size: 16px;
       line-height: 24px; }
   .about_us {
-    padding-top: 0;
-    margin-top: 60px; }
+    padding-top: 0; }
     .about_us h3 {
       padding-top: 30px; }
     .about_us .review {
@@ -3617,19 +3817,17 @@ path {
           margin-top: 60px; }
         .about_us .review .post:first-child {
           margin-top: 0; }
-    .about_us .svg {
-      position: absolute;
-      left: 40px; }
   .wedo {
     padding-top: 60px;
     padding-bottom: 60px; }
     .wedo h3 {
-      display: none; }
+      display: none;
+      padding: 20px 10px 0; }
     .wedo .mobile {
       display: block;
       padding-bottom: 20px; }
     .wedo .wrap {
-      margin-top: 130px;
+      margin-top: 0;
       padding: 0; }
     .wedo .left_menu {
       display: none; }
@@ -3640,73 +3838,68 @@ path {
         padding: 0;
         font-size: 24px;
         line-height: 40px; }
-      .wedo .description:before {
+      .wedo .description .shest {
         background-size: 100%;
         left: 50%;
         margin-left: -64px;
         width: 128px;
         height: 128px;
-        top: -130px; }
+        top: -120px; }
       .wedo .description .text {
         font-size: 16px;
         line-height: 24px; }
       .wedo .description .link {
         display: block;
         padding-top: 24px; }
-    .wedo.change_to_left {
-      padding-top: 0; }
-      .wedo.change_to_left .wrap {
-        margin-top: 130px;
-        padding: 0; }
-      .wedo.change_to_left .left_menu {
-        display: none; }
-      .wedo.change_to_left .description {
+      .wedo .description.change_to_left {
         padding: 5px 10px 0;
         text-align: center; }
-        .wedo.change_to_left .description .title {
+        .wedo .description.change_to_left .text {
+          font-size: 16px;
+          line-height: 24px; }
+        .wedo .description.change_to_left .wrap {
+          margin-top: 130px;
+          padding: 0; }
+        .wedo .description.change_to_left .left_menu {
+          display: none; }
+        .wedo .description.change_to_left .title {
           padding: 0;
           font-size: 24px;
           line-height: 40px; }
-        .wedo.change_to_left .description:before {
+        .wedo .description.change_to_left .shest {
           background-size: 100%;
           left: 50%;
           margin-left: -64px;
-          top: -130px; }
-        .wedo.change_to_left .description .text {
-          font-size: 16px;
-          line-height: 24px; }
-        .wedo.change_to_left .description .link {
+          top: -120px; }
+        .wedo .description.change_to_left .link {
           display: block;
           padding-top: 24px; }
-    .wedo.bg_grey {
-      background-color: #FFF;
-      padding-top: 0; }
-      .wedo.bg_grey .wrap {
-        margin-top: 130px;
-        padding: 0; }
-      .wedo.bg_grey .description {
+      .wedo .description.bg_grey {
+        background-color: #FFF;
         padding: 5px 10px 0;
         text-align: center; }
-        .wedo.bg_grey .description .title {
+        .wedo .description.bg_grey .wrap {
+          margin-top: 130px;
+          padding: 0; }
+        .wedo .description.bg_grey .title {
           padding: 0;
           font-size: 24px;
           line-height: 40px; }
-        .wedo.bg_grey .description:before {
+        .wedo .description.bg_grey .shest {
           background-size: 100%;
           left: 50%;
           margin-left: -64px;
-          background-image: url(../img/bolcks.svg);
-          top: -130px; }
-        .wedo.bg_grey .description .text {
+          top: -120px; }
+        .wedo .description.bg_grey .text {
           font-size: 16px;
           line-height: 24px; }
-        .wedo.bg_grey .description .link {
+        .wedo .description.bg_grey .link {
           display: block;
           padding-top: 24px; }
   .contacts {
     padding-top: 30px;
     padding-bottom: 60px; }
-    .contacts .wrap {
+    .contacts .wrap_contacts {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -webkit-flex-direction: column;
@@ -3727,7 +3920,7 @@ path {
       padding-bottom: 42px; }
       .contacts.reverse h1 {
         padding-top: 40px; }
-      .contacts.reverse .wrap {
+      .contacts.reverse .wrap_contacts {
         margin-bottom: 0; }
       .contacts.reverse h3 {
         padding-top: 0; }
@@ -3759,7 +3952,7 @@ path {
       .contacts.hire_us_form h3 {
         color: #ee0000;
         padding-bottom: 20px; }
-      .contacts.hire_us_form .wrap {
+      .contacts.hire_us_form .contact_us {
         padding: 0 25px; }
       .contacts.hire_us_form .form_wrapper {
         margin: 0 auto; }

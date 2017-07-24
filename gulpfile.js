@@ -19,15 +19,14 @@ var gulp           = require('gulp'),
 
 gulp.task('common-js', function () {
 	return gulp.src([
-			'app/js/slick.min.js',
 			'app/js/common.js',
-			
+		
 		])
 		.pipe(babel({
 			presets: ['es2015']
 		}))
 		.pipe(concat('common.min.js'))
-		// .pipe(uglify())
+		.pipe(uglify())
 		.pipe(gulp.dest('app/js'));
 });
 
@@ -35,9 +34,6 @@ gulp.task('js', ['common-js'], function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/slick/slick.min.js',
-		// 'app/libs/page-scroll-to-id-master/jquery.malihu.PageScroll2id.min.js',
-		// 'app/libs/sly/sly.js',
-		// 'app/libs/slick/slick.min.js',
 		'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
@@ -88,7 +84,7 @@ gulp.task('watch', ['sass', 'js','fileinclude', 'browser-sync'], function () {
 
 gulp.task('imagemin', function() {
 	return gulp.src('app/img/**/*')
-	.pipe(cache(imagemin()))
+	// .pipe(cache(imagemin()))
 	.pipe(gulp.dest('dist/img'));
 });
 
