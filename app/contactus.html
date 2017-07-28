@@ -30,7 +30,9 @@
 <body>
 
 <div class="wrapper">
-	<header class="header"><!-- header-->
+	
+<!-- HEADER-->
+<header class="header">
 	<div class="page">
 		<div class="nav">
 			<div class="logo"><a href="index.html"><img src="./img/logo_top.svg"></a></div>
@@ -61,7 +63,7 @@
 				</ul>
 			</nav>
 			<nav id="menu-mobile-second">
-				<a class="back" href="#">Back</a>
+				<div class="back" href="#">Back</div>
 				<ul>
 					<li><a href="proddevelopment.html">Product Development</a></li>
 					<li><a href="#">Startup Services</a></li>
@@ -78,8 +80,10 @@
 			  </span>
 		</button>
 	</div>
-</header><!-- .header-->
+</header>
+<!-- HEADER-->
 
+<!-- MODAL -->
 <div id="openModal" class="modalDialog">
 	<div class="wrapper">
 		<header class="header hire_us">
@@ -120,6 +124,7 @@
 		</main><!-- .content -->
 	</div>
 </div>
+<!-- MODAL -->
 
 	<main class="content">
 		<section class="contacts reverse">
@@ -127,47 +132,48 @@
 				<h1>Contact us</h1>
 				<h3 class="marked">The market is&nbsp;not standing still.<br>
 					And neither are&nbsp;we. </h3>
-				<div class="wrap_contacts">
-	<div class="contact_us">
-		<h3>Contact Us</h3>
-		<div class="form_wrapper">
-			<h4 class="form_h4">Work with us</h4>
-			<div class="contact_us_text">Our clients get the best results when they have our team dedicated to&nbsp;their
+				<!--contacts-->
+<div class="wrap_contacts">
+	<div class="contact_us ">
+		<h3 >Contact Us</h3>
+		<div class="form_wrapper animate_block">
+			<h4 class="form_h4 item_animate">Work with us</h4>
+			<div class="contact_us_text item_animate">Our clients get the best results when they have our team dedicated to&nbsp;their
 				business for extended
 				periods
 				of&nbsp;time.
 			</div>
-			<form class="form" action="">
-				<div class="fields">
+			<form class="form animate_block" action="">
+				<div class="fields item_animate">
 					<input type="text" class="txt" name="name" tabindex="1" placeholder="Your Name"
 						title="Your Name" required="">
 				</div>
-				<div class="fields">
+				<div class="fields item_animate">
 					<input type="email" class="txt" title="Your Email" name="email"
 						pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
 						placeholder="Your Email"
 						required="">
 				</div>
-				<div class="fields">
+				<div class="fields item_animate">
 					<textarea class="txt" title="Message" rows="3" cols="5" placeholder="Message"></textarea>
 				</div>
-				<div class="send">
+				<div class="send item_animate">
 					<input class="button" type="submit" id="sand" value="Send Request">
 				</div>
 			</form>
 		</div>
 	</div>
-	<div class="location">
+	<div class="location animate_block">
 		<h3>Office Location</h3>
-		<div class="address contact_map_adr odessa"><a>The Pentagon<br>
+		<div class="address contact_map_adr odessa item_animate"><a>The Pentagon<br>
 			Washington, DC 20301</a>
 		</div>
-		<div class="phone"><a href="tel: 492-374-3714">Phone: 492-374-3714</a></div>
-		<div class="phone"><a href="tel: 347-331-2566">Fax: 347-331-2566</a></div>
-		<div class="map" id="map"></div>
+		<div class="phone item_animate"><a href="tel: 492-374-3714">Phone: 492-374-3714</a></div>
+		<div class="phone item_animate"><a href="tel: 347-331-2566">Fax: 347-331-2566</a></div>
+		<div class="map item_animate" id="map"></div>
 	</div>
 </div>
-
+<!--contacts-->
 
 
 
@@ -176,8 +182,9 @@
 	</main><!-- .content -->
 </div>
 
-<footer class="footer"><!-- footer -->
-	<div class="page">
+<!-- footer -->
+<footer class="footer ">
+	<div class="page ">
 		<div class="logo_footer">
 			<a href="#"><img src="./img/logo_top.svg"></a>
 			<nav>
@@ -191,8 +198,8 @@
 			<a>Back to Top</a>
 		</div>
 	</div>
-</footer><!-- .footer -->
-
+</footer>
+<!-- .footer -->
 
 <link rel="stylesheet" href="css/main.min.css">
 <script src="js/scripts.min.js"></script>

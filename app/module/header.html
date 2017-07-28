@@ -51,4 +51,45 @@
 </header>
 <!-- HEADER-->
 
-@@include('../module/modal.html')
+<!-- MODAL -->
+<div id="openModal" class="modalDialog">
+	<div class="wrapper">
+		<header class="header hire_us">
+			<div class="logo"><a href="index.html"><img src="./img/logo_top.svg"></a></div>
+			<a id="close" title="Закрыть" class="close"></a>
+		</header><!-- .header-->
+		<main class="content">
+			<section class="contacts hire_us_form">
+				<div class="wrap">
+					<div class="contact_us">
+						<div class="form_wrapper">
+							<h3>Work with us</h3>
+							<div class="contact_us_text">Our clients get the best results when they have our team dedicated to&nbsp;their
+								business for extended
+								periods
+								of&nbsp;time.
+							</div>
+							<form class="form" action="">
+								<div class="fields">
+									<input type="text" class="txt" name="name" tabindex="1" placeholder="Your Name"
+										title="Your Name" required="">
+								</div>
+								<div class="fields">
+									<input type="email" class="txt" title="Your Email" name="email"
+										pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+										placeholder="Your Email"
+										required="">
+								</div>
+								<textarea class="txt" title="Message" rows="3" cols="100" placeholder="Message"></textarea>
+								<div class="send">
+									<input class="button" type="submit" id="sand" value="Send Request">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main><!-- .content -->
+	</div>
+</div>
+<!-- MODAL -->

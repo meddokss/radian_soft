@@ -37,7 +37,7 @@ gulp.task('js', ['common-js'], function() {
 		'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Минимизировать весь js (на выбор)
+	.pipe(uglify()) // Минимизировать весь js (на выбор)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({stream: true}));
 });
@@ -58,14 +58,14 @@ gulp.task('sass', function() {
 	.pipe(sass({outputStyle: 'expand'}).on("error", notify.onError()))
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer(['last 15 versions']))
-	// .pipe(cleanCSS()) // Опционально, закомментировать при отладке
+	.pipe(cleanCSS()) // Опционально, закомментировать при отладке
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.reload({stream: true}));
 });
 
 // include HTML
 gulp.task('fileinclude', function() {
-	return gulp.src(['app/include_html/*.html'])
+	return gulp.src(['app/include_html/**/*.html'])
 	.pipe(fileinclude({
 		prefix: '@@',
 		basepath: '@file'
@@ -77,7 +77,7 @@ gulp.task('fileinclude', function() {
 
 gulp.task('watch', ['sass', 'js','fileinclude', 'browser-sync'], function () {
 	gulp.watch(['app/sass/**/*.sass', 'app/sass/**/*.scss', 'app/libs/**/*.scss'], ['sass']);
-	gulp.watch(['app/include_html/*.html'], ['fileinclude']);
+	gulp.watch(['app/include_html/**/*.html'], ['fileinclude']);
 	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
 	gulp.watch('app/**/*.html', browserSync.reload);
 });

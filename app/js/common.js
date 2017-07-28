@@ -2,6 +2,7 @@ $(function () {
 	let isSecondaryNav = false;
 	$('body').addClass('loaded');
 	
+	// ------------- MENU ------------------//
 	// открытие меню
 	function openNav(element, isSecondary) {
 		let windowWidth = parseInt($(window).width(), 10);
@@ -17,6 +18,7 @@ $(function () {
 		}
 		return false;
 	}
+	
 	// закрытие меню
 	function closeNav(element) {
 		$('body').removeClass('ov-h');
@@ -30,35 +32,12 @@ $(function () {
 	$('#second_menu').on('click', function () {
 		$('#menu-mobile-second').css({'position': `fixed`});
 		$('#menu-mobile-second').css({'display': `flex`});
-		$('#menu-mobile-second').animate({"left": "0px"}, "slow");
+		$('#menu-mobile-second').animate({"left": "0px"}, 300);
 		$('#menu-mobile-second').css({zIndex: `20`});
 		isSecondaryNav = true;
 	});
 	
-	//Стрелка назад во втором меню
-	function back() {
-		let windowWidth = parseInt($(window).width(), 10);
-		$('#menu-mobile-second').animate({"left": `${windowWidth}px`}, 400);
-		$('#menu-mobile ul li').removeClass('active');
-		setTimeout(function () {
-			$('#menu-mobile-second').css({'display': `none`});
-			$('#menu-mobile-second').css({'position': `relative`});
-		}, 1000 );
-		return false
-	}
-	$('.back').on('click', back);
-
-	// MODAL
-	function openModal() {
-		$('.modalDialog').addClass('open');
-	}
-	function closeModal() {
-		$('.modalDialog').removeClass('open');
-	}
-	$('#open').on('click', openModal);
-	$('#close').on('click', closeModal);
-	// END MODAL
-	
+	// активный пункт меню
 	$('#menu-mobile ul li').on('click', function () {
 		$('ul li').removeClass('active');
 		$(this).addClass('active');
@@ -68,6 +47,38 @@ $(function () {
 		$(this).addClass('active');
 	});
 	
+	//Стрелка назад во втором меню
+	function back() {
+		let windowWidth = parseInt($(window).width(), 10);
+		$('#menu-mobile-second').animate({"left": `${windowWidth}px`}, 300);
+		$('#menu-mobile ul li').removeClass('active');
+		setTimeout(function () {
+			$('#menu-mobile-second').css({'display': `none`});
+			$('#menu-mobile-second').css({'position': `relative`});
+		}, 1000);
+		return false
+	}
+	
+	$('.back').on('click', back);
+	
+	// ------------- END MENU------------------//
+	
+	
+	// ------------- MODAL------------------//
+	function openModal() {
+		$('.modalDialog').addClass('open');
+	}
+	
+	function closeModal() {
+		$('.modalDialog').removeClass('open');
+	}
+	
+	$('#open').on('click', openModal);
+	$('#close').on('click', closeModal);
+	// ------------- END MODAL------------------//
+	
+	
+	// ------------- HAMBURGER------------------//
 	// действие на клик по гамбургеру
 	$('#hamburger').on('click', function () {
 		if (!$(this).hasClass('is-active')) {
@@ -75,22 +86,27 @@ $(function () {
 		}
 		else {
 			closeNav(this);
+			back();
 		}
 	});
 	
 	// действие при изменении размера экрана
-	$(window).resize(() => {
+	$(window).on('resize', () => {
 		let windowWidth = parseInt($(window).width(), 10);
 		if (windowWidth >= 767 && $('#hamburger').hasClass('is-active')) {
 			closeNav($('#hamburger'));
+			$('#menu-mobile-second').css({'display': `none`});
+			back();
 		}
 		if (windowWidth < 765 && $('#hamburger').hasClass('is-active')) {
 			openNav($('#hamburger'), isSecondaryNav);
 		}
 	});
 	
-	$(document).keyup(function(e) {
-		// if (e.which === 13 && $('#hamburger').hasClass('is-active')) closeNav($('#hamburger'));  // enter
+	// ------------- END HAMBURGER------------------//
+	
+	// ------------- KEYUP ------------------//
+	$(document).on('keyup', function (e) {
 		if (e.which === 27 && $('#hamburger').hasClass('is-active')) {
 			closeNav($('#hamburger'));// esc
 			back();
@@ -100,72 +116,89 @@ $(function () {
 		e.preventDefault();
 		e.stopPropagation();
 	});
+	// ------------- END KEYUP ------------------//
 	
-	$('ol.sl li').click(function () {
+	// ------------- Main slider------------------//
+	// определение размера секций слайдера
+	function sliderHeight(section = '#section-1') {
+		if ($(window).width() > 1024) {
+			let intFrameHeight = window.innerHeight;
+			let childrenFrameHeight = $(section).children('.wedo__content').innerHeight();
+			if (childrenFrameHeight + 105 >= intFrameHeight) {
+				$('.wrap').height(childrenFrameHeight + 200);
+			}
+			else {
+				$('.wrap').height(intFrameHeight);
+			}
+		}
+		else if ($(window).width() <= 1024 && $(window).width() > 700) {
+			$('.wrap').height($(section).innerHeight());
+		}
+		else {
+			$('.wrap').height('auto');
+		}
+	}
+	
+	// определение размера секций слайдера при загрузке сайта
+	sliderHeight();
+	// Поведение слайдера при переключении слайдов
+	$('ol.sl li').on('click', function () {
 		let tab_id = $(this).attr('data-tab');
-		$('.active_desc > .title').removeClass('move_up');
-		$('.active_desc > .text').removeClass('move_text');
-		$('.active_desc > .shest').removeClass('move_down');
+		let idN = parseInt(tab_id[tab_id.length - 1]);
+		let section_id = $("#" + tab_id);
+		
+		let classesForWedo = {
+			1: 'active-1',
+			2: 'active-2',
+			3: 'active-3',
+			4: 'active-4',
+			5: 'active-5',
+		};
+		
+		jQuery.each(classesForWedo, function (item, index) {
+			$(".wrap").removeClass(index);
+		});
+		
+		$(".wrap").addClass(classesForWedo[idN]);
+		
+		$('.active_desc > .wedo__content > .title').removeClass('move_up');
+		$('.active_desc > .wedo__content > .text').removeClass('move_text');
+		$('.active_desc > .wedo__content > .shest').removeClass('move_down');
 		$(".description").removeClass('active_desc');
-		// $(".description>::before").addClass('move_down');
 		$("#" + tab_id).addClass('active_desc');
-		$('.active_desc > .title').addClass('move_up');
-		$('.active_desc > .text').addClass('move_text');
-		$('.active_desc > .shest').addClass('move_down');
+		$('.active_desc > .wedo__content > .title').addClass('move_up');
+		$('.active_desc > .wedo__content > .text').addClass('move_text');
+		$('.active_desc > .wedo__content > .shest').addClass('move_down');
 		$('ol.sl li').removeClass('active_red');
 		$(this).addClass('active_red');
 		
-		if($('.active_desc').hasClass('bg_grey') ){
+		if ($('.active_desc').hasClass('bg_grey')) {
 			$(".wedo").addClass('grey');
 		}
-		else{
+		else {
 			$(".wedo").removeClass('grey');
 		}
-		if($(window).width() > 1024){
-			$('.description').height($('100vh'));
-		}
-		else if ($(window).width() <= 1024 && $(window).width() > 700) {
-			$('.wrap').height($("#" + tab_id).innerHeight());
-		}
-		else{
-			$('.wrap').height('auto');
-		}
+		// определение размера секций слайдера при переключении слайдов
+		sliderHeight(section_id);
 	});
-	
-	$(window).on('resize', function() {
-		let tab_id = $('ol.sl li.active_red').attr('data-tab');
-		if($('.active_desc').hasClass('bg_grey') ){
-			$(".wedo").addClass('grey');
-		}
-		else{
-			$(".wedo").removeClass('grey');
-		}
-		if($(window).width() > 1024){
-			$('.wrap').height('100vh');
-		}
-		else if ($(window).width() <= 1024 && $(window).width() > 700) {
-			$('.wrap').height($("#" + tab_id).innerHeight());
-		}
-		else{
-			$('.wrap').height('auto');
-		}
-	});
-	
-	$(window).resize(() => {
+	// Поведение слайдера при ресайзе
+	$(window).on('resize', function () {
 		let windowWidth = parseInt($(window).width(), 10);
-		if (windowWidth < 700 ) {
+		let tab_id = $('ol.sl li.active_red').attr('data-tab');
+		let section_id = $("#" + tab_id);
+		if ($('.active_desc').hasClass('bg_grey') && windowWidth > 700) {
+			$(".wedo").addClass('grey');
+		}
+		else {
 			$(".wedo").removeClass('grey');
 		}
+		// определение размера секций слайдера при ресайзе окна
+		sliderHeight(section_id);
 	});
-		
-	window.onscroll = function() {
-		let top = ($(window).scrollTop() || $("body").scrollTop());
-		if(top>= 100){
-			$('.svg').addClass('move')
-		}
-	};
+	// ------------- END Main slider ------------------//
 	
-	// SLIDER
+	
+	// ------------- SLIDER on page Product Development -------------//
 	let slick_slider = $('.responsive');
 	let settings = {
 		dots: false,
@@ -196,7 +229,7 @@ $(function () {
 		]
 	};
 	slick_slider.slick(settings);
-	$(window).on('resize', function() {
+	$(window).on('resize', function () {
 		if ($(window).width() < 605) {
 			if (slick_slider.hasClass('slick-initialized')) {
 				slick_slider.slick('unslick');
@@ -208,17 +241,32 @@ $(function () {
 			return slick_slider.slick(settings);
 		}
 	});
-	// END SLIDER
+	// ------------- END SLIDER on page Product Development -------------//
+	
 	
 	//Back to top
-	$('.back_top').click(function () {
+	$('.back_top').on('click', function () {
 		$('body').animate({
 			scrollTop: 0
 		}, 'slow');
 	});
 	/////
 	
-	// GOOGLE MAP
+	// Запуск анимации при прокрутке до блока
+	$(window).on('scroll', function () {
+		textAnimate();
+		console.log(1);
+		let top = ($(window).scrollTop() || $("body").scrollTop());
+		if (top >= 1200) {
+			$('.svg').addClass('move')
+		}
+	});
+	
+	$(document).on("scrollstart",function(){
+		textAnimate();
+	});
+	
+	//  -------------  GOOGLE MAP  ------------- //
 	let map,
 		marker,
 		image = $(window).width() <= 768 ? 'img/marker.svg' : 'img/marker.svg',
@@ -382,7 +430,7 @@ $(function () {
 				]
 			}
 		];
-	
+	//Инициализация карты
 	function initMap() {
 		map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 15,
@@ -401,6 +449,8 @@ $(function () {
 		});
 		marker.addListener('click', toggleBounce);
 	}
+	
+	//Анимация маркера
 	function toggleBounce() {
 		if (marker.getAnimation() !== null) {
 			marker.setAnimation(null);
@@ -408,14 +458,60 @@ $(function () {
 			marker.setAnimation(google.maps.Animation.BOUNCE);
 		}
 	}
+	
 	$('.contact_map_adr').on('click', function () {
 		if ($(this).hasClass('odessa')) {
 			map.setCenter({lat: 38.871053, lng: -77.056298});
 		}
 	});
+	//Инициализация карты
 	initMap();
+	//Запуск анимации маркера
 	toggleBounce();
-	// MAP END
+	//  -------------  END GOOGLE MAP  ------------- //
+	
+	// Анимация  блоков
+	
+	
+	function textAnimateLittle() {
+		let blocks = [];
+		let scrollVal = $(document).scrollTop();
+		$('.animate_block').map((i, item) => {
+			if ($(item).offset().top <= window.innerHeight / 1.15) blocks.push(item);
+		});
+		blocks.forEach(block => {
+			$(block).addClass('animate');
+		});
+		
+		if (scrollVal > 100) {
+			textAnimate();
+			
+		}
+	}
+	
+	function textAnimateOnLoad() {
+		if ($('.animate_onload')) {
+			$('.animate_onload').each(function () {
+				$(this).addClass('animate');
+			});
+		}
+	}
+	
+	function textAnimate() {
+		let scrollVal = $(document).scrollTop();
+		if ($('.animate_block')) {
+			$('.animate_block').each(function () {
+				if (scrollVal > ( $(this).offset().top - $(window).height() / 1.15 )) {
+					$(this).addClass('animate');
+				}
+			});
+		}
+	}
+	
+	textAnimateOnLoad();
+	textAnimateLittle();
+	
+	
 });
 
 
